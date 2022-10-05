@@ -1,7 +1,10 @@
 <template>
   <div>
     <ItemMusicTop :playlist="state.playlist" />
-    <ItemMusicList :itemList="state.itemList" />
+    <ItemMusicList
+      :itemList="state.itemList"
+      :subscribedCount="state.playlist.subscribedCount"
+    />
   </div>
 </template>
 <script>

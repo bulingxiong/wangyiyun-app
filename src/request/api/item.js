@@ -6,10 +6,17 @@ export function getMusicItemList(data) {
         url: `/playlist/detail?id=${data}`
     })
 }
-//获取歌单详情页的数据
+//获取歌单的所有歌曲
 export function getItemList(data) {
     return service({
         method: "GET",
-        url: `/playlist/track/all?id=${data}&limit=20&offset=1`
+        url: `/playlist/track/all?id=${data}&limit=${data.limit}&offset=${data.offset}`
+    })
+}
+//获取歌曲的歌词
+export function getMusicLyric(data) {
+    return service({
+        method: "GET",
+        url: `/lyric?id=${data}`
     })
 }
